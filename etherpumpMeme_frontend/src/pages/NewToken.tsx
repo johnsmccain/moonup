@@ -159,7 +159,7 @@ const NewToken = () => {
 
     imageData.append("image", file);
 
-    const response = await axios.post(import.meta.env.VITE_PINATA_API_ENDPOINT, imageData, {
+    const response = await axios.post(`${import.meta.env.VITE_PINATA_API_ENDPOINT}/upload`, imageData, {
       headers: {
         "Content-Type": "multipart/form-data",
 
