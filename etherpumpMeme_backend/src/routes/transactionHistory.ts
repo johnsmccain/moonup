@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/:curveAddr", async (req, res) => {
     const curveAddr = req.params.curveAddr as `0x${string}`;
     try {
-        await refreshTracactions(curveAddr);
+        // await refreshTracactions(curveAddr);
 
         const page = (typeof req.query.page == "string" && parseInt(req.query.page)) || 1;
         const limit = (typeof req.query.limit == "string" && parseInt(req.query.limit)) || 10;

@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-        await refreshCurve();
+        // await refreshCurve();
 
         const page = (typeof req.query.page == "string" && parseInt(req.query.page)) || 1;
         const limit = (typeof req.query.limit == "string" && parseInt(req.query.limit)) || 10;

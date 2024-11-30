@@ -7,13 +7,14 @@ import TokenRouter from "./src/routes/tokens"
 import CurveRouter from "./src/routes/curve"
 import UploadRouter from "./src/routes/uploadMedia"
 import dotenv from "dotenv";
-import { publicClient } from "./evm";
-import { moonUpFactoryContract } from "./contracts/meme_abi";
-import { parseAbiItem } from "viem";
+// import { publicClient } from "./evm";
+// import { moonUpFactoryContract } from "./contracts/meme_abi";
+// import { parseAbiItem } from "viem";
 
 dotenv.config();
 
-const PORT = Number(process.env.PORT) || 9000;
+const PORT = process.env.PORT || 9000;
+
 
 const app = express();
 
@@ -51,53 +52,53 @@ async function main(){
 }
 
 // Start listening to contract events
-async function listenToContractEvents() {
-  const fromBlockx = 1234567; // Contract deployment block
-  const toBlockx = await publicClient.getBlockNumber(); // Current block number
+// async function listenToContractEvents() {
+//   const fromBlockx = 1234567; // Contract deployment block
+//   const toBlockx = await publicClient.getBlockNumber(); // Current block number
 
-  const batchSize = 1000; // Process 1000 blocks at a time
-  let logs = [];
-  for (let i = fromBlockx; i <= toBlockx; i += batchSize) {
+//   const batchSize = 1000; // Process 1000 blocks at a time
+//   let logs = [];
+//   for (let i = fromBlockx; i <= toBlockx; i += batchSize) {
 
-    try {
-      const logs = await publicClient.getLogs({
-        address: moonUpFactoryContract.address,
-        event:     {
-          type: 'event',
-          name: 'MoonUpBeaconFactory__TokensCreated',
-          inputs: [
-              { indexed: true, name: 'proxy', type: 'address' },
-              { indexed: true, name: 'token', type: 'address' },
-          ],
-      },
-        fromBlock: BigInt(i),
-        toBlock: BigInt(Math.min(i + batchSize - 1, Number(toBlockx))),
-      })
-      console.log(logs)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-    // try {
-    //   // Subscribe to the "MoonUpBeaconFactory__TokensCreated" event
-    //   const unwatch = publicClient.watchContractEvent({
-    //     ...moonUpFactoryContract,
-    //     eventName: "MoonUpBeaconFactory__TokensCreated",
-    //     onLogs: (logs) => {
-    //       console.log('New Event Detected:', logs);
-    //       // Add your processing logic here
-    //     },
-    //     onError: (error) => {
-    //       console.error('Error while listening to events:', error);
-    //     },
-    //   });
+//     try {
+//       const logs = await publicClient.getLogs({
+//         address: moonUpFactoryContract.address,
+//         event:     {
+//           type: 'event',
+//           name: 'MoonUpBeaconFactory__TokensCreated',
+//           inputs: [
+//               { indexed: true, name: 'proxy', type: 'address' },
+//               { indexed: true, name: 'token', type: 'address' },
+//           ],
+//       },
+//         fromBlock: BigInt(i),
+//         toBlock: BigInt(Math.min(i + batchSize - 1, Number(toBlockx))),
+//       })
+//       console.log(logs)
+//     } catch (error) {
+//       console.log(error)
+//     }
+//   }
+//     // try {
+//     //   // Subscribe to the "MoonUpBeaconFactory__TokensCreated" event
+//     //   const unwatch = publicClient.watchContractEvent({
+//     //     ...moonUpFactoryContract,
+//     //     eventName: "MoonUpBeaconFactory__TokensCreated",
+//     //     onLogs: (logs) => {
+//     //       console.log('New Event Detected:', logs);
+//     //       // Add your processing logic here
+//     //     },
+//     //     onError: (error) => {
+//     //       console.error('Error while listening to events:', error);
+//     //     },
+//     //   });
   
-    //   unwatch();
-    //   console.log('Listening to MoonUpBeaconFactory__TokensCreated events...');
-    // } catch (error) {
-    //   console.error('Error setting up event listener:', error);
-    // }
-  }
+//     //   unwatch();
+//     //   console.log('Listening to MoonUpBeaconFactory__TokensCreated events...');
+//     // } catch (error) {
+//     //   console.error('Error setting up event listener:', error);
+//     // }
+//   }
   
 
 
