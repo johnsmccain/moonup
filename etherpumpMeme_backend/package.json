@@ -4,7 +4,7 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "pm2 start index.ts -i max --name etherpumpMeme_backend",
+    "dev": "npm install pm2 -g &&  pm2 start index.ts -i max --name etherpumpMeme_backend",
     "start": "ts-node index.ts"
 
   },
