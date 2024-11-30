@@ -4,9 +4,9 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "npm install pm2 -g &&  pm2 start index.ts -i max --name etherpumpMeme_backend",
+    "dev": "nodemon index.ts",
     "start": "ts-node index.ts"
-
+    
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
