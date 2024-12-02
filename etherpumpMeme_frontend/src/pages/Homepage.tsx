@@ -32,13 +32,13 @@ const HomePage =  () => {
   // }, [allPairLength]); // Fetch pairs when allPairLength is available or changes
 
   return (
-    <div className="relative">
+    <div className="relative font-sans">
     
       <div className="hero">
         <div className="hero-content text-center">
           <div className="max-w-md">
-            <h1 className="text-5xl font-bold sec_font">MOON UP</h1>
-            <p className="py-6 text-xl">
+            <h1 className="text-5xl font-bold">MOON UP</h1>
+            <p className="py-6 text-xl ">
               The First Meme Fair Launch Platform on Etherum. Meme Your Way to
               the Moon
             </p>

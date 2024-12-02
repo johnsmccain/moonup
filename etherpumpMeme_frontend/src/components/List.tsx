@@ -33,10 +33,10 @@ const List = ({allPairsLength}: any) => {
                 <div className="container md:px-4 mx-auto z-50">
                   <div className="w-full flex-col sm:flex-row gap-4 flex justify-between p-2 mb-4">
                     <div className="">
-                      <label className="input input-bordered flex items-center gap-2 rounded-xl z-50">
+                      <label className="input input-bordered flex items-center gap-2 rounded-xl z-40">
                         <input
                           type="text"
-                          className="grow text-sm z-50"
+                          className="grow text-sm z-40"
                           placeholder="Search for Token"
                         />
                         <svg
@@ -53,7 +53,7 @@ const List = ({allPairsLength}: any) => {
                         </svg>
                       </label>
                     </div>
-                    <div className="flex items-center gap-4 z-50">
+                    <div className="flex items-center gap-4 z-40">
                       <select
                         className="select w-full max-w-xs rounded-lg"
                         value={selectedOption}

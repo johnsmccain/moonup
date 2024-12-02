@@ -234,11 +234,11 @@ const NewToken = () => {
 
   return (
     <div>
-      <section className="py-8">
+      <section className="py-8 font-sans">
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-4 mb-8">
             <div className="max-w-2xl mx-auto px-6">
-              <h1 className="text-4xl sm:text-5xl sec_font text-center">
+              <h1 className="text-4xl sm:text-5xl text-center">
                 Create Your Token on MoonPumps
               </h1>
             </div>
@@ -457,7 +457,7 @@ const NewToken = () => {
                     </div>
                   </form>
                   {/* <Button onClick={getlogs}>see logs</Button> */}
-                  <Button onClick={handleSend}>Send Data</Button>
+                  {/* <Button onClick={handleSend}>Send Data</Button> */}
                 </div>
               </div>
             </div>

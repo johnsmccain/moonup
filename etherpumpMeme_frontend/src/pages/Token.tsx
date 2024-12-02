@@ -114,7 +114,7 @@ const Token = () => {
     <div>
 
       <TokenInfo tokenInfo={tokenMetaInfo as ITokenInfo}/>
-      <section className="py-3">
+      <section className="sm:py-3">
         <div className="container px-4 mx-auto mb-4 sm:hidden flex gap-4">
           <div onClick={() => setActiveTab("chart")}>
             <div className="flex items-center gap-1 border-b-2 border-blue-900" >
@@ -164,7 +164,6 @@ const Token = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

@@ -19,17 +19,17 @@ const TokenInfo = ({ tokenInfo }: { tokenInfo: ITokenInfo }) => {
   if (!tokenInfo) return <Loading />
 
   return (
-    <section className="py-8">
+    <section className="sm:py-8">
       <div className="container px-4 mx-auto">
         <div className=" mx-auto">
-          <div className="px-10 pt-6 pb-10 mb-6  bg-gray-900 shadow-lg rounded-xl relative">
-            <div className="absolute flex gap-4 top-[30px] right-[10px] rounded-l-lg px-2">
+          <div className="sm:px-10 px-3 pt-6 pb-10 mb-6  bg-gray-900 shadow-lg rounded-xl relative">
+            <div className="absolute  flex gap-4 top-0 right-0 rounded-l-lg px-2 ">
               <FaXTwitter className="text-gray-500 hover:text-lg hover:text-gray-400 transition duration-300 ease-in-out" />
               <FaGlobe className="text-gray-500 hover:text-lg hover:text-gray-400 transition duration-300 ease-in-out" />
               <FaTelegramPlane className="text-gray-500 hover:text-lg hover:text-gray-400 transition duration-300 ease-in-out" />
             </div>
             <div className="">
-              <div className="flex flex-wrap items-center justify-between -mx-4 -mb-5">
+              <div className="flex flex-wrap items-center justify-between sm:-mx-4 -mb-5">
                 <div className="w-full sm:w-auto ">
                   <div className="sm:flex ">
                     {/* <img
@@ -37,7 +37,7 @@ const TokenInfo = ({ tokenInfo }: { tokenInfo: ITokenInfo }) => {
                       src={tokenInfo.image}
                       alt=""
                     /> */}
-                    <div className="w-[100px] h-[100px] sm:w-[200px] sm:h-[300px] mr-4 self-start rounded-xl overflow-hidden">
+                    <div className="w-[100px] h-[100px] sm:w-[200px] sm:h-[300px] mr-4 mb-3 self-start rounded-xl overflow-hidden">
                     {tokenInfo?.image?<AdvancedImage cldImg={img} /> :<Loading/>}
                     </div>
                     <div>
@@ -67,24 +67,24 @@ const TokenInfo = ({ tokenInfo }: { tokenInfo: ITokenInfo }) => {
                       </p>
                       <div className="flex mt-12">
                         <div className="stats bg-transparent">
-                          <div className="stat">
-                            <div className="stat-title">Price</div>
-                            <div className="stat-value text-primary text-xl">
+                          <div className="sm:stat p-3">
+                            <div className="stat-title text-sm">Price</div>
+                            <div className="stat-value text-primary text-base">
                               0.034ETH
                             </div>
                             <div className="stat-desc text-green-300 font-semibold">
                               +544,599.36%
                             </div>
                           </div>
-                          <div className="stat">
-                            <div className="stat-title">Marketcap</div>
-                            <div className="stat-value text-gray-300 text-xl">
+                          <div className="sm:stat p-3">
+                            <div className="stat-title text-sm">Marketcap</div>
+                            <div className="stat-value text-gray-300 text-base">
                               $27.35M
                             </div>
                           </div>
-                          <div className="stat">
-                            <div className="stat-title">Liquidity</div>
-                            <div className="stat-value text-gray-300 text-xl">
+                          <div className="sm:stat p-3">
+                            <div className="stat-title text-sm">Liquidity</div>
+                            <div className="stat-value text-gray-300 text-base">
                               $609.02k
                             </div>
                           </div>

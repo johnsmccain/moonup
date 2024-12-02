@@ -45,7 +45,7 @@ const Navbar = () => {
     <header className={`fixed z-50 bg-[#15173033] w-full transition-all duration-300 ${isScrolled ? '  border-b border-[#1E1E33] backdrop-blur-md shadow-md text-[#1E1E33]' : 'text-white'}`}>
       <section className="container mx-auto py-1 md:px-4 md:py-4 flex justify-between items-center sec_font">
         <nav className={`md:flex w-full`}>
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 z-50">
             <div className="relative flex  items-center">
               <Link className="inline-block" to="/home">
                 <img className="w-12 rounded-lg" src={logo} alt="" />
@@ -141,14 +141,12 @@ const Navbar = () => {
             </div>
             <div>
               <div
-                className="flex items-center justify-center h-12 mb-4 px-4 text-center text-base
-                 text-gray-200 hover:text-blue-500 font-semibold bg-blue-500 hover:bg-blue-200
-                 shadow-lg rounded-lg transition duration-200"
+                className="flex items-center justify-center "
               >
                 {/* {walletConnected ? ${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}
                   : "Connect Wallet"} */}
                   {/* <ConnectWallet/> */}
-                <ConnectButton/>
+                <ConnectButton />
 
               </div>
             </div>

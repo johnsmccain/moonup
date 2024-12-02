@@ -29,7 +29,7 @@ function App() {
   
   pattern-size-8 pattern-opacity-10"> */}
 
-     <div className=" mx-auto pt-48 min-w-[700px]">
+     <div className=" mx-auto pt-48 ">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/newtoken" element={<NewToken />} />
