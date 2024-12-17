@@ -1,5 +1,6 @@
-import { ITokenInfo } from "@/types";
+
 import axios from "axios"
+import { ITokenInfo } from "../types";
 
 export async function fetchUrlToJson(url: string){
     return await axios.get(url)
@@ -133,4 +134,21 @@ export async function uploadToken(tokenData: IToken): Promise<void> {
   } catch (error) {
     console.error('Upload failed:', error);
   }
+}
+const API_BASE_URL = '/api';
+
+export async function fetchTokens() {
+  const response = await fetch(`${API_BASE_URL}/tokens`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch tokens');
+  }
+  return response.json();
+}
+
+export async function fetchTokenDetails(id: string) {
+  const response = await fetch(`${API_BASE_URL}/tokens/${id}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch token details');
+  }
+  return response.json();
 }

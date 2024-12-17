@@ -1,5 +1,5 @@
+
 // import React from 'react'
-import { data } from '@/utils/dummy'
 import { useEffect } from 'react'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { FaGlobe, FaXTwitter } from 'react-icons/fa6'
@@ -8,6 +8,7 @@ import { AdvancedImage } from '@cloudinary/react'
 import { Cloudinary } from '@cloudinary/url-gen/index'
 import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity'
 import { auto } from '@cloudinary/url-gen/actions/resize'
+import { data } from '../utils/dummy'
 const TokenCard = ({item}:any) => {
   const navigate = useNavigate()
   const cardItem = data[1]
@@ -30,8 +31,8 @@ const TokenCard = ({item}:any) => {
   }, [])
   
   return (
-    <div key={cardItem.id} className="w-full md:hover:max-w-72 transition-all ease-in-out md:max-w-60">
-      <div className="border-blue-0" onClick={()=>navigate(`/curve/${item.curveAddr}`)}>
+    <div key={cardItem.id} className="w-full md:hover:max-w-full transition-all ease-in-out md:max-w-[95%] cursor-pointer gap-5 mb-3">
+      <div className="border-blue-0" onClick={()=>navigate(`/token/${item.curveAddr}`)}>
         <div className="hover:border-blue-500 border-2 rounded-2xl h-full relative overflow-hidden">
           <div
             className="relative "
@@ -58,15 +59,15 @@ const TokenCard = ({item}:any) => {
             /> */}
           </div>
           <div className="pt-6 pb-3 px-4 relative backdrop-blur-lg ">
-            <div className="absolute flex gap-2 top-3 right-0 rounded-l-lg px-2 bg-black w-fit p-1 rounded-lg mr-1">
+            <div className="absolute flex gap-2 top-3 right-0 rounded-l-lg px-2 bg-black w-fit p-1  mr-1">
               <FaXTwitter className="text-gray-200 hover:text-lg hover:text-gray-400 transition duration-300 ease-in-out" />
               <FaGlobe className="text-gray-200 hover:text-lg hover:text-gray-400 transition duration-300 ease-in-out" />
               <FaTelegramPlane className="text-gray-200 hover:text-lg hover:text-gray-400 transition duration-300 ease-in-out" />
             </div>
-            <h2 className="font-bold text-sm text-gray-200 font-heading mb-1 bg-black w-fit p-1 rounded-lg">
+            <h2 className="font-bold text-sm text-gray-200 font-heading pb-1 bg-black w-fit p-2 rounded-tr-xl rounded-tl-xl">
               {`${item.name}(${item.symbol})`}
             </h2>
-            <p className="mb-3 text-xs bg-black w-fit p-1 rounded-lg">
+            <p className="pb-3 text-xs bg-black w-fit p-2 text-white rounded-tr-xl">
               <span>Created by:</span>
               <a
                 href={`https://sepolia.etherscan.io/address/${item.creator}`}
@@ -76,7 +77,7 @@ const TokenCard = ({item}:any) => {
                 {`${item.creator.slice(0, 4)}...${item.creator.slice(-4)}`}
               </a>
             </p>
-            <p className="text-gray-100 text-xs mb-4 bg-black w-fit p-1 rounded-lg">
+            <p className="text-gray-100 text-xs mb-4 bg-black w-fit p-2 rounded-br-xl rounded-bl-xl rounded-tr-xl ">
               {cardItem.description}
             </p>
             <h2 className="mt-6 mb-2">
@@ -96,30 +97,3 @@ const TokenCard = ({item}:any) => {
 }
 
 export default TokenCard
-
-{/* <div class="flex min-h-screen items-center justify-center bg-blue-900 text-white">
-  <div class="max-w-sm space-y-4 rounded-xl bg-blue-950 p-6">
-    <img src="https://i.ibb.co/TkbnsyH/image-equilibrium.jpg" alt="" class="rounded-xl" />
-    <h1 class="font-bold">Equilibrium #3429</h1>
-    <p class="text-s text-blue-200">Our Equilibrium collection promotes balance and calm.</p>
-
-    <div class="flex justify-between">
-      <h1 class="flex items-center text-cyan-300">
-        <img src="https://svgur.com/i/1Bao.svg" alt="" class="mr-2" />
-        0.041 ETH
-      </h1>
-
-      <h1 class="flex items-center text-blue-200">
-        <img src="https://svgur.com/i/1Bbi.svg" class="mr-2" alt="" />
-        3 days Left
-      </h1>
-    </div>
-
-    <div class="border-t border-blue-300 border-opacity-70"></div>
-
-    <div class="flex items-center space-x-4">
-      <img src="https://i.ibb.co/gdghc6B/image-avatar.png" alt="" class="h-10 w-10 rounded-full border-2" />
-      <h1 class="text-blue-200">Creation of <span class="text-white">Jules Wyvern</span></h1>
-    </div>
-  </div>
-</div> */}

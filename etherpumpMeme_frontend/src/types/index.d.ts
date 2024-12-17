@@ -14,6 +14,7 @@ export interface ITokenInfo {
     roomId?: string;
     roomIdExpiration?: number;
     replies?: string[];
+    priceChange24h?: number;
 }
 
 export interface IFormData {
@@ -25,7 +26,7 @@ export interface IFormData {
     telegram: string;
     minExpectedAmount: string;
     creationFee: string;
-    file: File | null;
+    file: File | null | string;
     isBuy: boolean;
   }
   

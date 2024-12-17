@@ -1,48 +1,22 @@
-import { FaXTwitter, FaInstagram } from "react-icons/fa6";
-import { FaTelegramPlane } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.jpg";
+import React from 'react';
+import { Github, Twitter } from 'lucide-react';
 
-const Footer = () => {
+export function Footer() {
   return (
-    <div>
-      <div className="pt-24 pb-12 ">
-        <div className="container mx-auto px-4 py-6 border-t border-gray-400">
-          <div className="flex items-center justify-between flex-wrap gap-8">
-            <a href="#">
-              <img className="w-10 rounded-lg" src={logo} alt="" />
+    <footer className="bg-black text-white py-8">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 mb-4 md:mb-0">© 2024 WAGMI. All rights reserved.</p>
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-yellow-400 transition-colors">
+              <Twitter className="w-6 h-6" />
             </a>
-
-            <div className="flex items-center gap-6 flex-wrap">
-              <Link
-                className="text-gray-400 hover:text-gray-600 transition duration-200"
-                to="#"
-              >
-                <FaXTwitter className="text-gray-300 text-lg  hover:text-gray-600 transition duration-300 ease-in-out" />
-              </Link>
-              <Link
-                className="text-gray-400 hover:text-gray-600 transition duration-200"
-                to="#"
-              >
-                <FaTelegramPlane className="text-gray-300 text-lg  hover:text-gray-600 transition duration-300 ease-in-out" />
-              </Link>
-              <Link
-                className="text-gray-400 hover:text-gray-600 transition duration-200"
-                to="#"
-              >
-                <FaInstagram className="text-gray-300 text-lg  hover:text-gray-600 transition duration-300 ease-in-out" />
-              </Link>
-            </div>
+            <a href="#" className="hover:text-yellow-400 transition-colors">
+              <Github className="w-6 h-6" />
+            </a>
           </div>
         </div>
-        <div className="pt-12">
-          <p className="text-center text-sm text-gray-400 font-bold">
-            © 2024 Etherpump.Meme. All rights reserved
-          </p>
-        </div>
       </div>
-    </div>
+    </footer>
   );
-};
-
-export default Footer;
+}
