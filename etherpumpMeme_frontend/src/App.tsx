@@ -19,8 +19,8 @@ function App() {
           <Route path="/token/:curveAddr" element={<TokenDetail />} />
           <Route path="/create-token" element={<CreateTokenForm />} />
         </Routes>
-      </div>
       <Footer />
+      </div>
     </BrowserRouter>
   );
 }
