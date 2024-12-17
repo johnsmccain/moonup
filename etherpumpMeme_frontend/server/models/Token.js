@@ -1,28 +1,19 @@
 import mongoose from 'mongoose';
 
 const tokenSchema = new mongoose.Schema({
-  curveAddr: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  tokenAddr: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  photoUrl: {
-    type: String,
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  lastUpdated: {
-    type: Date,
-    default: Date.now,
-  },
+  address: {type: String},
+  curveAddr: {type: String},
+  creator: {type: String},
+  createdBlock: {type: String},
+  name: {type: String},
+  description: {type: String},
+  totalSupply: {type: Number},
+  image: {type: String},
+  symbol: {type: String},
+  website: {type: String},
+  telegram: {type: String},
+  twitter: {type: String},
+  replies: {type: [String]},
 });
 
 const Token = mongoose.model('Token', tokenSchema);

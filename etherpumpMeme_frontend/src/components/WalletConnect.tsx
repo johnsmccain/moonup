@@ -1,11 +1,10 @@
-import React from 'react';
+// import React from 'react';
 import { Wallet } from 'lucide-react';
 import { useWalletStore } from '../store/useWalletStore';
-import { useAppKit } from '@reown/appkit/react'
-import { useConnect } from 'wagmi';
+
 export function WalletConnect() {
-  const { isConnected, address, connect, disconnect } = useWalletStore();
-  const {connect: wagmiConnect} = useConnect()
+  const { isConnected, address, connect } = useWalletStore();
+  // const {connect: wagmiConnect} = useConnect()
   // const { open, close } = useAppKit()
   const formatAddress = (addr: string) => {
     return `${addr.slice(0, 6)}...${addr.slice(-4)}`;

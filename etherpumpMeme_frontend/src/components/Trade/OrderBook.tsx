@@ -1,12 +1,12 @@
-import React from 'react';
+// import React from 'react';
 import { ArrowDown, ArrowUp } from 'lucide-react';
 import { useOrderBook } from '../../hooks/useOrderBook';
-import type { Order } from '../../types';
+// import type { Order } from '../../types';
 
 export function OrderBook() {
   const { buyOrders, sellOrders } = useOrderBook();
 
-  const renderOrder = (order: Order, type: 'buy' | 'sell') => (
+  const renderOrder = (order: any, type: 'buy' | 'sell') => (
     <div className="grid grid-cols-3 gap-4 text-sm">
       <div className={`${type === 'buy' ? 'text-green-400' : 'text-red-400'} flex items-center gap-1`}>
         {type === 'buy' ? <ArrowUp className="w-4 h-4" /> : <ArrowDown className="w-4 h-4" />}
@@ -28,7 +28,7 @@ export function OrderBook() {
       </div>
 
       <div className="space-y-1 mb-4">
-        {sellOrders.map((order, i) => (
+        {sellOrders.map((order:any, i:any) => (
           <div key={i}>{renderOrder(order, 'sell')}</div>
         ))}
       </div>
@@ -38,7 +38,7 @@ export function OrderBook() {
       </div>
 
       <div className="space-y-1 mt-4">
-        {buyOrders.map((order, i) => (
+        {buyOrders.map((order:any, i:any) => (
           <div key={i}>{renderOrder(order, 'buy')}</div>
         ))}
       </div>

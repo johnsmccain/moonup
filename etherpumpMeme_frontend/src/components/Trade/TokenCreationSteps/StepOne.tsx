@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 
@@ -8,9 +8,16 @@ interface StepOneProps {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   handleNext: () => void;
   isDeployed: boolean;
+  isLoading: boolean;
 }
-function StepOne({ formData, handleInputChange, handleNext, handleSubmit, isDeployed}:StepOneProps) {
-
+function StepOne({ formData, handleInputChange, handleNext, handleSubmit, isDeployed, isLoading}:StepOneProps) {
+  const [isCompleted, setisCompleted] = useState(false)
+  
+  useEffect(() => {
+    if (formData.tokenName && formData.tokenSymbol) {
+      setisCompleted(true)
+    }
+  }, [formData])
   
   return (
     <>
@@ -47,10 +54,10 @@ function StepOne({ formData, handleInputChange, handleNext, handleSubmit, isDepl
         </div>
       </div>
       <div className="mt-4 flex justify-between items-center">
-        <p className="text-purple-900 bg-purple-300 px-4 py-2 rounded">Creation fee: 0.002ETH</p>
-        <button onClick={isDeployed ? handleNext : handleSubmit} className="bg-purple-500 cursor-pointer text-white px-4 py-2 rounded">
+        <p className={`text-purple-900 bg-purple-300 px-4 py-2 rounded `}>Creation fee: 0.002ETH</p>
+        {isLoading? "Loading":<button disabled={ !isCompleted} onClick={isDeployed ? handleNext : handleSubmit} className={`"bg-purple-500 cursor-pointer text-white px-4 py-2 rounded"  ${isCompleted ? "bg-purple-500 cursor-pointer rounded" : "cursor-not-allowed disabled:bg-slate-600"}`}>
           {isDeployed? "Next" : "Deploy Token"}
-        </button>
+        </button>}
       </div>
     </>
   )

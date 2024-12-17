@@ -6,7 +6,7 @@ import tokenRoutes from './routes/tokenRoutes.js';
 import transactionRoutes from './routes/transactionRoutes.js';
 import { watchTokenEvents, getHistoricalEvents } from './services/blockchain.js';
 import logger from './utils/logger.js';
-
+import mediaRoute from './routes/mediaRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -21,6 +21,8 @@ connectDB();
 // Routes
 app.use('/api/tokens', tokenRoutes);
 app.use('/api/transactions', transactionRoutes);
+app.use('/', mediaRoute);
+
 
 // Start blockchain event listener
 const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;

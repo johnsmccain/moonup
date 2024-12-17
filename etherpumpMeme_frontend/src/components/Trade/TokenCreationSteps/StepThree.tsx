@@ -7,15 +7,14 @@ interface FormData {
 interface StepThreeProps {
   formData: FormData;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  handleNext: () => void;
   handlePrev: () => void;
   filePreview: string | null;
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleUploadToken: (e: React.FormEvent) => void
 }
 
-const StepThree = ({ handleInputChange, formData , handleNext, handlePrev,filePreview, handleFileChange  }:StepThreeProps) => {
+const StepThree = ({ handleInputChange, formData ,  handlePrev,filePreview, handleFileChange, handleUploadToken  }:StepThreeProps) => {
 
-    const handleSubmit = async () => {}
   return (
     <>
       <h2 className="text-xl font-bold mb-4">Step 3: Upload File</h2>
@@ -29,7 +28,7 @@ const StepThree = ({ handleInputChange, formData , handleNext, handlePrev,filePr
             className="block w-full outline-none bg-transparent text-gray-50 placeholder-gray-50 font-semibold"
             name="minExpectedAmount"
             // type="number"
-            // value={formData.minExpectedAmount}
+            value={formData.minExpectedAmount as any}
             onChange={handleInputChange}
             // min={"0.002"}
 
@@ -117,7 +116,7 @@ const StepThree = ({ handleInputChange, formData , handleNext, handlePrev,filePr
         <button onClick={handlePrev} className="bg-gray-400 text-white px-4 py-2 rounded">
           Back
         </button>
-        <button onClick={handleSubmit} className="bg-green-500 text-white px-4 py-2 rounded">
+        <button onClick={handleUploadToken} className="bg-green-500 text-white px-4 py-2 rounded">
           Submit
         </button>
       </div>

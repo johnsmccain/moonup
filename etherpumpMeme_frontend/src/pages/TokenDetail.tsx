@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { createChart } from 'lightweight-charts';
-import { ArrowDownUp } from 'lucide-react';
+// import { ArrowDownUp } from 'lucide-react';
 import { TransactionHistory } from '../components/TokenDetail/TransactionHistory';
 import { ChatSection } from '../components/TokenDetail/ChatSection';
 import { MajorHolders } from '../components/TokenDetail/MajorHolders';
@@ -16,7 +16,7 @@ export function TokenDetail() {
 
   const chartContainerRef = React.useRef<HTMLDivElement>(null);
   const { transactions, messages, holders, fetchTransactions, fetchMessages, fetchHolders, sendMessage } = useTokenDetailStore();
-  const [activeTab, setActiveTab] = useState("trade");
+  // const [activeTab, setActiveTab] = useState("trade");
   const [tokenMetaInfo, setTokenMetaInfo] = useState<ITokenInfo>()
   const { curveAddr } = useParams();
   useEffect(() => {

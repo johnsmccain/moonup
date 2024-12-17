@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { Sun, Menu, X } from 'lucide-react';
+import  { useState } from 'react';
+import {  Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { WalletConnect } from './WalletConnect';
 import { MobileMenu } from './MobileMenu';
 import logo from "../assets/icons/logo.svg"
-import ConnectButton from './ConnectButton';
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

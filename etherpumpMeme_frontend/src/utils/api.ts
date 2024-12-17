@@ -87,7 +87,7 @@ interface IToken {
   address: string;
   curveAddr: string;
   creator: string;
-  createdBlock: string;
+  createdBlock: bigint;
   name: string;
   symbol: string;
   totalSupply: number;
@@ -107,7 +107,7 @@ export async function uploadToken(tokenData: IToken): Promise<void> {
     formData.append('address', tokenData.address);
     formData.append('curveAddr', tokenData.curveAddr);
     formData.append('creator', tokenData.creator);
-    formData.append('createdBlock', tokenData.createdBlock);
+    formData.append('createdBlock', tokenData.createdBlock as any);
     formData.append('name', tokenData.name);
     formData.append('symbol', tokenData.symbol);
     formData.append('totalSupply', tokenData.totalSupply.toString());
@@ -128,7 +128,7 @@ export async function uploadToken(tokenData: IToken): Promise<void> {
     //     'Content-Type': 'multipart/form-data',
     //   },
     // });
-    const response = await apiClient.post("/curves", formData);
+    const response = await apiClient.post("/api/tokens", formData);
 
     console.log('Upload successful:', response.data);
   } catch (error) {

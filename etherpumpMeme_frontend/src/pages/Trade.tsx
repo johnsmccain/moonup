@@ -1,27 +1,39 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useWalletStore } from '../store/useWalletStore';
 import { AlertCircle } from 'lucide-react';
 import { TradeForm } from '../components/Trade/TradeForm';
 import { OrderBook } from '../components/Trade/OrderBook';
 import type { TradeType } from '../components/Trade/OrderTypes';
 
-const MOCK_ORDERS = {
-  buyOrders: [
-    { price: 1.23456, amount: 0.5, total: 0.617280 },
-    { price: 1.23455, amount: 1.2, total: 1.481460 },
-    { price: 1.23454, amount: 0.8, total: 0.987632 },
-  ],
-  sellOrders: [
-    { price: 1.23459, amount: 0.3, total: 0.370377 },
-    { price: 1.23458, amount: 0.7, total: 0.864206 },
-    { price: 1.23457, amount: 0.4, total: 0.493828 },
-  ],
-};
+// const MOCK_ORDERS = {
+//   buyOrders: [
+//     { price: 1.23456, amount: 0.5, total: 0.617280 },
+//     { price: 1.2const MOCK_ORDERS = {
+//   buyOrders: [
+//     { price: 1.23456, amount: 0.5, total: 0.617280 },
+//     { price: 1.23455, amount: 1.2, total: 1.481460 },
+//     { price: 1.23454, amount: 0.8, total: 0.987632 },
+//   ],
+//   sellOrders: [
+//     { price: 1.23459, amount: 0.3, total: 0.370377 },
+//     { price: 1.23458, amount: 0.7, total: 0.864206 },
+//     { price: 1.23457, amount: 0.4, total: 0.493828 },
+//   ],
+// };
+// 3455, amount: 1.2, total: 1.481460 },
+//     { price: 1.23454, amount: 0.8, total: 0.987632 },
+//   ],
+//   sellOrders: [
+//     { price: 1.23459, amount: 0.3, total: 0.370377 },
+//     { price: 1.23458, amount: 0.7, total: 0.864206 },
+//     { price: 1.23457, amount: 0.4, total: 0.493828 },
+//   ],
+// };
 
 export function Trade({curveAddr}:{curveAddr:`0x${string}`}) {
   const { isConnected } = useWalletStore();
   const [tradeType, setTradeType] = useState<TradeType>('buy');
-
+console.log(curveAddr)
   return (
     <div className="min-h-screen pt-24 pb-12 bg-gradient-to-br from-purple-900 via-black to-blue-900">
       <div className="container mx-auto px-4">
@@ -29,8 +41,8 @@ export function Trade({curveAddr}:{curveAddr:`0x${string}`}) {
           {/* Order Book */}
           <div className="lg:col-span-2">
             <OrderBook
-              buyOrders={MOCK_ORDERS.buyOrders}
-              sellOrders={MOCK_ORDERS.sellOrders}
+              // buyOrders={MOCK_ORDERS.buyOrders}
+              // sellOrders={MOCK_ORDERS.sellOrders}
             />
           </div>
 

@@ -15,7 +15,7 @@ interface TokenStore {
   fetchTokens: () => Promise<void>;
 }
 
-export const useTokenStore = create<TokenStore>((set, get) => ({
+export const useTokenStore = create<TokenStore>((set, _) => ({
   tokens: [],
   isLoading: false,
   error: null,
@@ -31,7 +31,7 @@ export const useTokenStore = create<TokenStore>((set, get) => ({
     set({ isLoading: true, error: null });
     try {
       // Replace 'https://api.example.com/tokens' with your backend API endpoint
-      const response = await fetch('http://localhost:9000/api/tokens');
+      await fetch('http://localhost:9000/api/tokens');
       fetchDynamicData("/api/tokens", { params: { category: "", limit: 15 } }).then((res:any) => {
 
         if (!res.ok) {

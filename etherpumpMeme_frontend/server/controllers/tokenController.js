@@ -3,15 +3,29 @@ import logger from '../utils/logger.js';
 
 export const createToken = async (req, res) => {
   try {
-    const { curveAddr, tokenAddr, photoUrl } = req.body;
-    
-    const token = await Token.create({
-      curveAddr,
-      tokenAddr,
-      photoUrl,
+    const curveAddr = req.body.curveAddr;
+    console.log(curveAddr);
+    console.log(req.body);
+    // cloudinary.uploader.upload('').then(result => {
+    //     console.log(result);
+    //   })
+    // Check if the curve already exists in the database
+    const existingCurve = await Token.findOne({ curveAddr: curveAddr });
+
+    if (existingCurve) {
+        res.status(400).send({ message: "Curve already exists" });
+        return;
+    }
+
+    // If not, create the curve (replace this with your actual creation logic)
+    const newCurve = new Token({
+        curveAddr: curveAddr,
+        ...req.body, // Include additional data for the curve if needed
     });
 
-    res.status(201).json(token);
+    await newCurve.save();
+
+    res.status(200).send({ message: "Curve created successfully", curve: newCurve });
   } catch (error) {
     logger.error('Error creating token:', error);
     res.status(400).json({ message: error.message });
@@ -36,7 +50,7 @@ export const getTokenByAddress = async (req, res) => {
         { tokenAddr: req.params.address }
       ]
     });
-    
+     
     if (!token) {
       return res.status(404).json({ message: 'Token not found' });
     }

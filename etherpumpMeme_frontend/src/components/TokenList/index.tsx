@@ -1,4 +1,3 @@
-import React from 'react';
 import { TokenListHeader } from './TokenListHeader';
 import { TokenGrid } from './TokenGrid';
 

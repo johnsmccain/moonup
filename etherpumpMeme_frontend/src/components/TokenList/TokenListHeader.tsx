@@ -1,4 +1,3 @@
-import React from 'react';
 import { SearchBar } from './SearchBar';
 import { FilterBar } from './FilterBar';
 import { useTokenStore } from '../../store/useTokenStore';

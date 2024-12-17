@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { OrderTypes, type OrderType, type TradeType } from './OrderTypes';
 import { PriceInput } from './PriceInput';
-import { useTokenOperations } from '../../hooks';
-import { parseEther } from 'viem';
+// import { useTokenOperations } from '../../hooks';
+// import { parseEther } from 'viem';
 
 interface TradeFormProps {
   tradeType: TradeType;
@@ -14,16 +14,16 @@ export function TradeForm({ tradeType, onTradeTypeChange }: TradeFormProps) {
   const [amount, setAmount] = useState('');
   const [limitPrice, setLimitPrice] = useState('');
   const [stopPrice, setStopPrice] = useState('');
-  const { buyToken } = useTokenOperations();
+  // const { buyToken } = useTokenOperations();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!amount) return;
 
     try {
-      const value = parseEther(amount);
-      const minExpected = parseEther('0'); // Calculate based on price type
-      await buyToken(minExpected, value);
+      // const value = parseEther(amount);
+      // const minExpected = parseEther('0'); // Calculate based on price type
+      // await buyToken(minExpected, value);
     } catch (error) {
       console.error('Trade failed:', error);
     }
