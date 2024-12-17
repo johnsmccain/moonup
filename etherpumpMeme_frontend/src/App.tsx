@@ -10,8 +10,8 @@ import { CreateTokenForm } from './components/CreateTokenForm';
 function App() {
   return (
     <BrowserRouter>
-        <Header />
       <div className="h-[92vh] overflow-y-scroll bg-gradient-to-br from-purple-900 via-black to-blue-900">
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/trade" element={<Trade />} /> */}

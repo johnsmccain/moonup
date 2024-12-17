@@ -12,7 +12,7 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-black/90 backdrop-blur-sm text-white p-4 z-50">
+    <header className="w-full bg-black/90 backdrop-blur-sm text-white p-4 z-50 relative">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2 ">
           {/* <Sun className="w-8 h-8 text-yellow-400 animate-spin-slow" /> */}

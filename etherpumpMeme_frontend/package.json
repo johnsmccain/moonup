@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "start-all": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+    "build": "npm install -g pm2 && pm2 start server/index.js -i 2 && npm run build"
   },
   "dependencies": {
     "@cloudinary/react": "^1.13.1",

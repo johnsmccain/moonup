@@ -10,7 +10,8 @@ const getBaseURL = () => {
     if (import.meta.env.VITE_NODE_ENV === "development") {
       return "http://localhost:9000"; // Development server
     } else if (import.meta.env.VITE_NODE_ENV === "production") {
-      return "https://moonup-zhc5.onrender.com/"; // Production server
+      return "hhttp://localhost:9000";
+      // return "https://moonup-zhc5.onrender.com/"; // Production server
     }
     return "http://localhost:9000"; // Fallback
   };

@@ -11,11 +11,11 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden fixed inset-0 z-50 pt-20">
+    <div className="md:hidden fixed inset-0 z-50 pt-20 bg-slate-900">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
       
-      <div className="relative bg-gray-900 h-full">
-        <nav className="flex flex-col p-4 space-y-4">
+      <div className="relative bg-gray-900 h-full ">
+        <nav className="flex flex-col p-4 space-y-4 bg-black">
           <Link
             to="/"
             className="flex items-center gap-3 p-3 hover:bg-gray-800 rounded-lg transition-colors"
@@ -26,12 +26,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           </Link>
           
           <Link
-            to="/trade"
+            to="/create-token"
             className="flex items-center gap-3 p-3 hover:bg-gray-800 rounded-lg transition-colors"
             onClick={onClose}
           >
             <TrendingUp className="w-5 h-5" />
-            <span>Trade</span>
+            <span>Create-token</span>
           </Link>
           
           <Link
