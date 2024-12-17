@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server/index.js",
-    "build": "npm install -g pm2 && pm2 start server/index.js -i 2 && npm run build"
+    "build": "npm install -g pm2 && pm2 start server/index.js -i 2 -f && vite build"
   },
   "dependencies": {
     "@cloudinary/react": "^1.13.1",
